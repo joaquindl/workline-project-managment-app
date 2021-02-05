@@ -1,0 +1,52 @@
+<div id="modal-new-project">
+    <form action="/create" method="POST" id="project-create-modal">
+        <div id="new-modal-content">
+            <div class="modal-title">
+                <p>Crear proyecto</p>
+            </div>
+            <div id="modal-icon-container">
+                <i class="fas fa-flask"></i>
+            </div>
+            <!-- Input title & description -->
+            <div class="w-100 text-center">
+                <input type="text" placeholder="Título" name="title" class="new-modal-inputs mb-4 mt-3">
+                <textarea placeholder="Descripción" name="description" maxlength="100"></textarea>
+                <!-- <input type="text" placeholder="Descripción del proyecto" name="description" class="new-modal-inputs"> -->
+            </div>
+            <!-- Input tasks -->
+            <div class="w-100 mt-4 text-center">
+                <div id="new-task-title" class="d-flex flex-row justify-content-center align-items-center">
+                    <p>Crear tareas</p>
+                    <span id="new-task">&plus;</span>
+                </div>
+                <div id="input-tasks-container">
+                    <!-- input 1 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 2 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 3 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 4 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 5 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 6 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 7 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 8 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 9 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                    <!-- input 10 -->
+                    <input type="text" placeholder="Inserte una tarea" name="task[]" class="input-tasks mt-3" id="input-task">
+                </div>
+                
+            </div>
+            <div class="modal-btn-container d-flex flex-row justify-content-center">
+                <button class="btn btn-dark modal-submit-btn" type="submit">Crear proyecto</button>
+            </div>
+            
+        </div>
+    </form>
+</div>

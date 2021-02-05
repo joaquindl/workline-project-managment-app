@@ -1,0 +1,99 @@
+!<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('./partials/head.ejs') %> 
+</head>
+<body>
+  <div class="container-fluid px-0">
+    <div class="contenedor-padre col-12 d-flex justify-content-around mx-0">
+      <!-- Partials -->
+      <%- include('./partials/sidebar.ejs') %> 
+      <%- include('./partials/projectIndex.ejs') %> 
+      <%- include('./partials/modalNewProject.ejs') %>
+      
+      <main class="main-content col-9 bg-light px-5">
+        <%- include('./partials/header.ejs') %>
+        <div class="detailed-card-container">
+          <div class="detailed-card-body m-3 d-flex flex-column justify-content-between">
+            <form action="/project/edit/<%= project.id %>?_method=PUT" method="POST">
+                <div>
+                <!-- Estado de proyecto y opciones -->
+                <div class="card-header col-12 d-flex flex-row justify-content-between align-items-center bg-transparent border-0">
+                    <div class="card-state">
+                        <% if (!project.state) { %> 
+                            <i class="fas fa-play-circle card-state-yellow"></i>
+                        <% } else if (project.state == 'terminado') { %>
+                            <i class="fas fa-check-circle card-state-green"></i>
+                        <% } else if (project.state == 'pausado') { %> 
+                            <i class="fas fa-pause-circle card-state-red"></i>
+                        <% } else if (project.state == 'cancelado') { %> 
+                            <i class="fas fa-times-circle card-state-red"></i>
+                        <% } %>
+                    </div>
+                    <div class="dropdown">
+                        <i class="fas fa-ellipsis-h card-dots-settings" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <ul class="dropdown-menu dropdown-menu-end mt-2 card-dropdown-settings" aria-labelledby="dropdownMenuButton">
+                            <!-- Marked -->
+                            <li class="dropdown-item"><a href="#">Marcar Proyecto</a></li>
+                            <!-- Edit -->
+                            <li class="dropdown-item"><a href="#">Editar</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- ícono, titulo y descripción -->
+                <div class="card-intern-body d-flex flex-column justify-content-around align-items-center my-3">
+                    <div class="card-icon-container mb-3">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="card-title">
+                        <input type="hidden" name="oldTitle" value="<%= project.title %>" >
+                        <input type="text" name="title" value="<%= project.title %>" placeholder="Título" required='required' class="new-modal-inputs">
+                    </div>
+                    <div class="card-area">
+                        <input type="hidden" name="oldDescription" value="<%= project.description %>">
+                        <textarea name="description" placeholder="Descripción" id="textarea-edit"><%= project.description %></textarea>
+                    </div>
+                </div>
+                <!-- tasks info -->
+                <div class="tasks-info d-flex flex-row justify-content-between align-items-center mt-3 mb-2">
+                    <p><%= `${project.tasks.length} tareas` %> </p>
+                    <p class="add-task-btn">Agregar Tarea</p>
+                </div>
+                <!-- Tasks List -->
+                <div class="tasks-list-container mb-3">
+                    <ul class="list-unstyled task-detail-list">
+                        <% if (project.tasks.length < 10) {%> 
+                            <% project.tasks.forEach(task => { %>
+                                <li class="border-0"><input type="hidden" name="oldTask[]" value="<%= task.name %>"></li>
+                                <li><input type="text" name="task[]" value="<%= task.name %>" placeholder="Inserte una tarea" class="input-edit-tasks"></li>
+                            <% }) %> 
+                            <% inputsArray.forEach(input => { %>
+                                <li><input type="text" name="task[]" placeholder="Inserte una tarea" class="input-edit-tasks"></li>
+                            <% }) %>
+                        <% } else if (taskNumber == 10) { %> 
+                            <% project.tasks.forEach(task => { %>
+                                <li class="border-0"><input type="hidden" name="oldTask[]" value="<%= task.name %>"></li>
+                                <li><input type="text" name="task[]" value="<%= task.name %>" placeholder="Inserte una tarea" class="input-edit-tasks"></li>
+                            <% }) %> 
+                        <% } %> 
+                    </ul>
+                </div>
+                </div>
+                <!-- Btn detalles -->
+                <div class="bottom-btn-edit d-flex flex-row justify-content-between align-items-center">
+                    <a href="/project/delete/<%= project.id %>" class="mb-0 btn-delete-edit btn-delete-cancel">Eliminar</a>
+                    <button type="submit" class="card-bottom-edit col-6">Guardar Cambios</button>
+                    <a href="/project/<%= project.id %>" class="btn-delete-cancel">Cancelar</a>
+                </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+  </div>
+  <!-- Bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

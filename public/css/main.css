@@ -1,0 +1,258 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 100vw;
+    min-width: 320px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+main {
+    position: absolute;
+    left: 25%;
+    height: 100vh;
+    top: 0;
+}
+
+/* Header */
+
+
+header {
+    padding-top: 1rem;
+}
+
+.search-field {
+    background-color: #e2e2e2;
+    border: 1px solid #e5e5e5;
+    border-radius: 25px;
+    height: 2.2rem;
+}
+
+.search-field i {
+    margin: auto .5rem;
+    color: #646464;
+}
+
+.search-field i:hover {
+    cursor: pointer;
+}
+
+.search-field input {
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: .9rem;
+    width: 100%;
+}
+
+.search-field input ::placeholder{
+    color: #646464;
+}
+
+.search-field input:focus {
+    border: none;
+    outline: none !important;
+}
+
+.date-time {
+    font-size: .85rem;
+    text-align: end;
+}
+
+.user-profile {
+    /* border: 1px #e5e5e5 solid; */
+    /* background-color: #e5e5e5; */
+    border-radius: 15px;
+    padding: .5rem;
+}
+
+.user-profile:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+#img-container {
+    border: 1px solid black;
+    border-radius: 100px;
+    overflow: hidden !important;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: .5rem;
+}
+
+#img-container img {
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#username p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+.dropdown-user-arrow {
+    font-size: .85rem;
+    color: rgb(75, 75, 75);
+}
+
+#user-up-arrow {
+    display: none;
+}
+
+.dropdown-usuario {
+    display: none;
+    border: 1px #e5e5e5 solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 13vh;
+    right: 3.5%;
+    border-radius: 10px;
+    padding: 1rem; 
+    background-color: white;
+};
+
+.dropdown-usuario ul li a:link {
+    color: #000000;
+}
+
+/* Cards */
+/* .cards-father::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cards-father::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.cards-father::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.cards-father::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} */
+
+.cards-container {
+    width: 25% !important;
+    text-decoration: none;
+    color: black;
+}
+
+.cards-container:hover{
+    color: black;
+}
+
+.card-body {
+    background-color: white;
+    border: rgb(150, 150, 150);
+    border-radius: 10px;   
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
+}
+
+/* Header */
+.card-state-green {
+    color: #64bc26;
+}
+
+.card-state-yellow {
+    color: #fad202;
+}
+
+.card-state-red {
+    color: #ea1601;
+}
+
+.card-dots-settings {
+    color: rgb(150, 150, 150);
+}
+
+.card-dots-settings:hover {
+    cursor: pointer;
+}
+
+#card-settings-list {
+    /* display: none; */
+    position: relative;
+    top: 10%;
+    border: rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+}
+
+#card-settings-list ul li{
+    font-size: .85rem;
+    color: black;
+    text-decoration: none;
+}
+
+.card-dropdown-settings {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+}
+
+.dropdown-item:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dropdown-item button {
+    border: none;
+    background: none;
+}
+
+/* Body */
+.card-icon-container i {
+    font-size: 2.5rem;
+}
+
+.card-area p {
+    font-size: .85rem;
+    text-align: center;
+}
+
+/* Tasks info */
+.tasks-info p {
+    font-size: .85rem;
+    color: rgb(75, 75, 75);
+    font-weight: 300;
+}
+
+.add-task-btn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Botton button */
+.card-bottom-info {
+    background-color: transparent;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+    font-size: .9rem;
+}
+
+.bottom-btn-edit a{
+    font-size: .85rem;
+    text-decoration: none;
+}
+
+.bottom-btn-edit a:hover {
+    text-decoration: underline;
+}
+
+.btn-delete-edit {
+    font-size: .75rem;
+    margin-bottom: 0;
+    color: red;
+}
+
+.btn-delete-edit:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(200, 0, 0);
+}
+
+.btn-delete-cancel {
+    font-size: .75rem !important;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "workline-todo-app",
+  "version": "1.0.0",
+  "description": "Todo app - NodeJs MVC",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaquindl/workline-todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaquindl/workline-todo-app/issues"
+  },
+  "homepage": "https://github.com/joaquindl/workline-todo-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

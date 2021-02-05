@@ -1,0 +1,40 @@
+.sidebar {
+    height: 100vh;
+    padding-top: .75rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.top-logo-icons a img {
+    width: 4rem;
+    margin: auto;
+}
+
+.top-logo-icons i {
+    font-size: 1.5rem;
+    margin: 1.5rem auto;
+    color: rgb(200, 200, 200);
+}
+
+.top-logo-icons i:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+.bottom-logo {
+    text-align: center;
+}
+
+.bottom-logo i{
+    font-size: 1.5rem;
+    margin: 1.2rem auto;
+    color: rgb(200, 200, 200);
+}
+
+.bottom-logo i:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    cursor: pointer;
+}

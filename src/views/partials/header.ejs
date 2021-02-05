@@ -1,0 +1,31 @@
+<!-- Search, date and userinfo -->
+<header>
+    <div class="search-date-user d-flex flex-row justify-content-between align-items-center col-12">
+        <div class="search-field col-6 d-flex flex-row justify-content-start align-items-center">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar">
+        </div>
+        <div class="date-time col-2">
+            <span id="dia"></span>
+            <span>de</span>
+            <span id="mes"></span>
+            <span>-</span>
+            <span id="año"></span>
+        </div>
+        <div class="user-profile col-2 d-flex flex-row justify-content-between align-items-center">
+            <div id="img-container" class="col-4 user-btn">
+                <img src="/img/perfil.jpg" alt="Imagen de perfil usuario">
+            </div>
+            <div id="username" class="col-7 user-btn">
+                <p>Juan Perez</p>
+            </div>
+            <i class="fas fa-chevron-down dropdown-user-arrow" id="user-down-arrow"></i>
+            <i class="fas fa-chevron-up dropdown-user-arrow" id="user-up-arrow"></i>
+            <div class="dropdown-usuario tex-align-right" id="id-dropdown">
+                <ul class="list-unstyled m-0">
+                    <li><a href="#" class="text-decoration-none" id="user-edit-a">Editar usuario</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

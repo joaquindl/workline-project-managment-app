@@ -1,0 +1,223 @@
+#modal-new-project {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    backdrop-filter: blur(1px);
+    margin: 0;
+}
+
+/* Modal Create project */
+
+#new-modal-content {
+    background-color: white;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 10px;
+    box-shadow: 6px 4px 8px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    margin: 1rem auto;
+    /* height: 75vh; */
+    max-height: 90vh;
+}
+
+.modal-title {
+    border: none;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.modal-title p {
+    margin: 1rem auto .5rem auto;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+#modal-icon-container {
+    border: 1px solid rgb(150, 150, 150);
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: 2rem auto .5rem auto;
+}
+
+#modal-icon-container i {
+    font-size: 4rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.new-modal-inputs {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.new-modal-inputs::placeholder {
+    font-size: .85rem;
+    /* text-align: center; */
+    padding: .5rem;
+}
+
+textarea {
+    resize: none;
+    width: 68%;
+    height: 5rem;
+    font-size: .85rem;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+}
+
+textarea::placeholder {
+    font-size: .85rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.card-area {
+    width: 100%;
+}
+
+#textarea-edit {
+    width: 100%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+#new-task-title {
+    border: none;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    width: 80%;
+    margin: auto;
+    padding-bottom: 0;
+}
+
+#new-task-title p {
+    margin-bottom: 0;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+#new-task-title span {
+    position: absolute;
+    right: 10%;
+    font-size: 1.5rem;
+}
+
+#new-task-title span:hover {
+    cursor: pointer;
+}
+
+#input-tasks-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 20vh;
+}
+
+
+#input-tasks-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+#input-tasks-container::-webkit-scrollbar-track {
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+}
+
+
+#input-tasks-container::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.input-tasks {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    /* border-bottom: 1px solid black; */
+    margin-bottom: 1rem;
+}
+
+.input-edit-tasks {
+    margin-left: 1rem;
+    width: 95%;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    /* border-bottom: 1px solid black; */
+    margin: auto 1rem .5rem 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.input-tasks::placeholder {
+    font-size: .85rem;
+    padding-left: .5rem;
+    /* text-align: center; */
+}
+
+.modal-btn-container {
+    margin: 0 auto .5rem auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(150, 150, 150);
+    width: 80%;
+
+}
+
+.modal-btn-container button {
+    width: 100%;
+}
+
+/* Modal delete project */
+
+.delete-modal-content {
+    background-color: white;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 10px;
+    box-shadow: 6px 4px 8px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    margin: 1rem auto;
+}
+
+.modal-delete-body {
+    border: none;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.modal-delete-body p {
+    margin: 2rem auto;
+}
+
+#button-modal-delete {
+    margin: auto;
+    text-align: center;
+}
+
+#button-modal-delete button {
+    margin: 1rem 1.5rem;
+}
