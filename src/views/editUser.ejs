@@ -1,0 +1,72 @@
+!<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('./partials/head.ejs') %> 
+</head>
+<body>
+  <div class="container-fluid px-0">
+    <div class="contenedor-padre col-12 d-flex justify-content-around mx-0">
+      <!-- Partials -->
+      <%- include('./partials/sidebar.ejs') %> 
+      <%- include('./partials/projectIndex.ejs') %> 
+      <%- include('./partials/modalNewProject.ejs') %>
+      
+      <main class="main-content col-9 bg-light px-5">
+        <%- include('./partials/header.ejs') %>
+        <div class="col-6 user-edit-container mx-auto">
+          <div class="user-edit-body mt-5 d-flex flex-column justify-content-between">
+            <form action="/user/edit/<%= locals.usuario.id %>?_method=PUT" method="POST" class="user-edit-form mb-0">
+                <div class="col-10 text-center border-bottom mx-auto">
+                    <p class="text-uppercase mb-2">Editar usuario</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <!-- Nombre, apellido e email -->
+                    <div class="card-intern-body d-flex flex-column justify-content-around align-items-center col-10 mt-3 mb-2 mx-auto border-bottom">
+                        <!-- Nombre de usuario -->
+                        <div class="card-title d-flex flex-column justify-content-start align-items-start col-12 mx-auto">
+                            <span class="edit-input-span mb-1">Nombre</span>
+                            <input type="hidden" name="oldName" value="<%= locals.usuario.name%>" >
+                            <input type="text" name="name" value="<%= locals.usuario.name%>" placeholder="Nombre" class="col-12 user-edit-input">
+                            <% if(typeof errors != 'undefined' && errors.name){%>
+                                <span class="text-danger error-back" > <%=errors.name.msg %></span>
+                            <%}%>
+                        </div>
+                        <!-- Apellido de usuario -->
+                        <div class="card-title d-flex flex-column justify-content-start align-items-start col-12 mx-auto">
+                            <span class="edit-input-span mb-1">Apellido</span>
+                            <input type="hidden" name="oldLastName" value="<%= locals.usuario.lastName%>" >
+                            <input type="text" name="lastName" value="<%= locals.usuario.lastName%>" placeholder="Apellido" class="col-12 user-edit-input">
+                            <% if(typeof errors != 'undefined' && errors.lastName){%>
+                                <span class="text-danger error-back" > <%=errors.lastName.msg %></span>
+                            <%}%>
+                        </div>
+                        <!-- Email de usuario -->
+                        <div class="card-title d-flex flex-column justify-content-start align-items-start col-12 mx-auto">
+                            <span class="edit-input-span mb-1">Correo electrónico</span>
+                            <input type="hidden" name="oldEmail" value="<%= locals.usuario.email%>" >
+                            <input type="email" name="email" value="<%= locals.usuario.email%>" placeholder="Correo Electrónico" class="col-12 user-edit-input">
+                            <% if(typeof errors != 'undefined' && errors.email){%>
+                                <span class="text-danger error-back" > <%=errors.email.msg %></span>
+                            <%}%>
+                        </div>
+                        <div class="card-title col-12 text-end btn-delete-cancel mb-3">
+                            <a href="/user/editPass/<%= locals.usuario.id %>">Cambiar contraseña</a>
+                        </div>
+                    </div>
+                <!-- Btn detalles -->
+                <div class="bottom-btn-edit d-flex flex-column justify-content-center align-items-center col-12 mt-2">
+                    <button type="submit" class="btn btn-outline-dark card-bottom-edit col-8 mb-2">Guardar Cambios</button>
+                    <a href="/user/delete/<%= locals.usuario.id %>  " role="button" class="btn btn-outline-danger col-8 mb-2">Eliminar usuario</a>
+                    <a href="/" class="btn-delete-cancel">Cancelar</a>
+                </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+  </div>
+  <!-- Bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,17 +1,22 @@
 const path = require("path");
-const { projects, tasks, project_task } = require('../database/models');
+const { projects, tasks, project_task, users } = require('../database/models');
 
 
 module.exports = {
+  start: async (req, res) => {
+    const allProjects = await projects.findAll({include: ['tasks']});
+    res.render(path.resolve(__dirname, '../views/index'), {allProjects});
+  },
   index: async (req, res) => {
     
     const allProjects = await projects.findAll({include: ['tasks']});
     const allTasks = await tasks.findAll();
     // Cuenta los elementos de la tabla. Le puedo incluirr condiciones
     const taskNumber = await tasks.count();
+    const user = users.findAll()
 
     // console.log(taskNumber);
-    res.render(path.resolve(__dirname, '../views/index'), {allProjects, taskNumber});
+    res.render(path.resolve(__dirname, '../views/index'), {allProjects, taskNumber, user});
     // res.send(proyectoTarea)
   },
   create: async (req, res) => {
@@ -35,7 +40,7 @@ module.exports = {
     res.redirect('/');
     
   },
-  show: async (req, res) => {
+  read: async (req, res) => {
     const project = await projects.findByPk(req.params.id, {include: ['tasks']});
     const taskNumber = await tasks.count();
 
@@ -103,8 +108,6 @@ module.exports = {
 
   },
   destroy: async(req, res) => {
-    
-    
 
     const projectTasks = await projects.findByPk(req.params.id, {include: ['tasks']});
 

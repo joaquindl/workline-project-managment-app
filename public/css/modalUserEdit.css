@@ -1,0 +1,65 @@
+.user-edit-container {
+    
+}
+
+.user-edit-body {
+    
+    padding: 3%;
+    background-color: white;
+    border: rgb(150, 150, 150);
+    border-radius: 10px;   
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
+    
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.user-edit-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.user-edit-body::-webkit-scrollbar-track {
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+}
+
+
+.user-edit-body::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+
+
+.edit-input-span {
+    font-size: .65rem;
+    color: rgb(160, 160, 160);
+}
+
+.user-edit-input {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: .85rem;
+}
+
+.user-edit-input::placeholder {
+    font-size: .85rem;
+    color: rgb(150, 150, 150);
+}
+
+#edit-password-btn:hover {
+    cursor: pointer;
+}
+
+.error-back {
+    font-size: .65rem;
+    background-color: rgba(255, 0, 0, .3);
+    border-radius: 5px;
+    margin-top: .5rem;
+    padding: .3rem;
+}

@@ -32,7 +32,7 @@ CREATE TABLE `project_task` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `deletedA` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `project_task` (
 
 LOCK TABLES `project_task` WRITE;
 /*!40000 ALTER TABLE `project_task` DISABLE KEYS */;
-INSERT INTO `project_task` VALUES (19,2,19,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(20,2,20,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(21,2,22,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(22,2,21,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL);
+INSERT INTO `project_task` VALUES (28,3,28,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(29,3,29,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(30,3,30,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(31,3,31,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(32,3,32,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(33,3,33,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(34,3,34,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(35,3,35,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL);
 /*!40000 ALTER TABLE `project_task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +62,7 @@ CREATE TABLE `projects` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES (2,'titulo','Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.',NULL,NULL,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL);
+INSERT INTO `projects` VALUES (3,'asdasdasd','asdasdasd',NULL,NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `tasks` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,8 +99,38 @@ CREATE TABLE `tasks` (
 
 LOCK TABLES `tasks` WRITE;
 /*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-INSERT INTO `tasks` VALUES (19,'tarea1',NULL,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(20,'tarea2',NULL,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(21,'tarea3',NULL,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL),(22,'tarea4',NULL,'2021-02-05 13:46:34','2021-02-05 13:46:34',NULL);
+INSERT INTO `tasks` VALUES (28,'asdasdasd',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(29,'asdf564sd6f54',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(30,'asdasdasd',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(31,'3as41s65df4',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(32,'dsw6af54s5',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(33,'6aswd845fsda6f54',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(34,'a6d5f4s6d5f4',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL),(35,'a65f46dfs54',NULL,'2021-02-05 20:30:08','2021-02-05 20:30:08',NULL);
 /*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `lastName` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
+  `deletedAt` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'Joaquin','Dominguez','joaquin@gmail.com','$2a$10$prN3aG6aOxckWw2BHokIO.61lbzOrtTjLoX4pZ','2021-02-07 22:28:56','2021-02-07 22:28:56',NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -112,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-05 10:48:40
+-- Dump completed on 2021-02-08 11:40:33

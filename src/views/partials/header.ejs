@@ -5,27 +5,23 @@
             <i class="fas fa-search"></i>
             <input type="text" placeholder="Buscar">
         </div>
-        <div class="date-time col-2">
-            <span id="dia"></span>
-            <span>de</span>
-            <span id="mes"></span>
-            <span>-</span>
-            <span id="año"></span>
+        <div class="date-time col-3">
+            <span id="clock" class="fw-bold text-primary"></span>
+            <span class="fw-bold text-primary"> - </span>
+            <span id="dia" class="fw-bold text-primary"></span>
+            <span class="fw-bold text-primary">/</span>
+            <span id="mes" class="fw-bold text-primary"></span>
         </div>
-        <div class="user-profile col-2 d-flex flex-row justify-content-between align-items-center">
-            <div id="img-container" class="col-4 user-btn">
-                <img src="/img/perfil.jpg" alt="Imagen de perfil usuario">
-            </div>
-            <div id="username" class="col-7 user-btn">
-                <p>Juan Perez</p>
-            </div>
-            <i class="fas fa-chevron-down dropdown-user-arrow" id="user-down-arrow"></i>
-            <i class="fas fa-chevron-up dropdown-user-arrow" id="user-up-arrow"></i>
-            <div class="dropdown-usuario tex-align-right" id="id-dropdown">
-                <ul class="list-unstyled m-0">
-                    <li><a href="#" class="text-decoration-none" id="user-edit-a">Editar usuario</a></li>
-                </ul>
-            </div>
-        </div>
+        <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle user-profile col-12 d-flex flex-row justify-content-around align-items-center" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <p class="mb-0"><%= locals.usuario.name %> <%= locals.usuario.lastName %></p>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="/user/edit/<%= locals.usuario.id %> " id="dropdown-edit">Editar usuario</a></li>
+              <li><a class="dropdown-item" href="/logout" id="dropdown-logout">Cerrar sesión</a></li>
+            </ul>
+          </div>
+
+        
     </div>
 </header>
